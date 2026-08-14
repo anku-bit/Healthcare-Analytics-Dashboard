@@ -2,7 +2,7 @@ import streamlit as st
 
 def show_report(df):
 
-    st.header("📄 Healthcare Analytics Report")
+    st.header("\U0001F4C4 Healthcare Analytics Report")
 
     st.subheader("Dataset Summary")
 

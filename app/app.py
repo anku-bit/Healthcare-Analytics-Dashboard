@@ -1,7 +1,5 @@
 import streamlit as st
 import pandas as pd
-
-# Import Modules
 from home import show_home
 from upload import show_upload
 from cleaning import show_cleaning
@@ -11,23 +9,15 @@ from machine_learning import show_machine_learning
 from prediction import show_prediction
 from report import show_report
 
-# ---------------- Page Configuration ---------------- #
-
 st.set_page_config(
     page_title="Healthcare Analytics Dashboard",
-    page_icon="🏥",
+    page_icon="\U0001F3E5",
     layout="wide"
 )
 
-# ---------------- Title ---------------- #
-
-st.title("🏥 Healthcare Analytics Dashboard")
+st.title("\U0001F3E5 Healthcare Analytics Dashboard")
 st.write("Welcome to Healthcare Analytics Dashboard")
-
-# ---------------- Sidebar ---------------- #
-
 st.sidebar.title("Navigation")
-
 option = st.sidebar.selectbox(
     "Select Module",
     [
@@ -42,17 +32,12 @@ option = st.sidebar.selectbox(
     ]
 )
 
-# ---------------- Load Dataset ---------------- #
-
 try:
     df = pd.read_csv("dataset/healthcare_dataset.csv")
 except:
     df = None
-
-# ========================= Routing ========================= #
-
 if df is None:
-    st.error("❌ Dataset Not Found!")
+    st.error("\u274C Dataset Not Found!")
     st.stop()
 
 if option == "Home":

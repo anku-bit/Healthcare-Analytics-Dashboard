@@ -4,9 +4,7 @@ from sklearn.linear_model import LinearRegression
 
 def show_prediction(df):
 
-    st.header("🎯 Calories Burned Prediction")
-
-    # Features
+    st.header("\U0001F3AF Calories Burned Prediction")
     X = df[
         [
             "Age",
@@ -19,11 +17,7 @@ def show_prediction(df):
             "Sleep_Hours"
         ]
     ]
-
-    # Target
     y = df["Calories_Burned"]
-
-    # Train Model
     model = LinearRegression()
     model.fit(X, y)
 
@@ -65,4 +59,4 @@ def show_prediction(df):
 
         prediction = model.predict(input_data)[0]
 
-        st.success(f"🔥 Estimated Calories Burned: {prediction:.2f} kcal")
+        st.success(f"\U0001F525 Estimated Calories Burned: {prediction:.2f} kcal")

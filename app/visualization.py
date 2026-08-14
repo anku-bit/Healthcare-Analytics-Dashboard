@@ -4,10 +4,7 @@ import seaborn as sns
 
 def show_visualization(df):
 
-    st.header("📈 Data Visualization Dashboard")
-
-    # ---------------- BMI vs Calories ---------------- #
-
+    st.header("\U0001F4CA  Data Visualization Dashboard")
     st.subheader("BMI vs Calories Burned")
 
     fig, ax = plt.subplots(figsize=(8,5))
@@ -19,9 +16,6 @@ def show_visualization(df):
         ax=ax
     )
     st.pyplot(fig)
-
-    # ---------------- Steps vs Calories ---------------- #
-
     st.subheader("Steps vs Calories Burned")
 
     fig, ax = plt.subplots(figsize=(8,5))
@@ -32,24 +26,18 @@ def show_visualization(df):
         ax=ax
     )
     st.pyplot(fig)
-
-    # ---------------- Sleep Hours ---------------- #
-
     st.subheader("Sleep Hours Distribution")
 
     fig, ax = plt.subplots(figsize=(8,5))
     sns.histplot(df["Sleep_Hours"], kde=True, ax=ax)
     st.pyplot(fig)
 
-    # ---------------- Exercise Minutes ---------------- #
 
     st.subheader("Exercise Minutes Distribution")
 
     fig, ax = plt.subplots(figsize=(8,5))
     sns.histplot(df["Exercise_Minutes"], kde=True, ax=ax)
     st.pyplot(fig)
-
-    # ---------------- Heart Rate Box Plot ---------------- #
 
     st.subheader("Heart Rate Box Plot")
 
@@ -59,9 +47,6 @@ def show_visualization(df):
         ax=ax
     )
     st.pyplot(fig)
-
-    # ---------------- Calories by Gender ---------------- #
-
     st.subheader("Average Calories Burned by Gender")
 
     fig, ax = plt.subplots(figsize=(8,5))
@@ -72,9 +57,6 @@ def show_visualization(df):
         ax=ax
     )
     st.pyplot(fig)
-
-    # ---------------- Average Steps ---------------- #
-
     st.subheader("Average Steps by Gender")
 
     fig, ax = plt.subplots(figsize=(8,5))
@@ -85,9 +67,6 @@ def show_visualization(df):
         ax=ax
     )
     st.pyplot(fig)
-
-    # ---------------- Correlation Heatmap ---------------- #
-
     st.subheader("Correlation Heatmap")
 
     fig, ax = plt.subplots(figsize=(10,7))

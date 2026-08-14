@@ -4,9 +4,8 @@ import seaborn as sns
 
 def show_eda(df):
 
-    st.header("📊 Exploratory Data Analysis")
+    st.header("\U0001F4CA  Exploratory Data Analysis")
 
-    # Age Distribution
     st.subheader("Age Distribution")
     fig, ax = plt.subplots(figsize=(8,5))
     ax.hist(df["Age"], bins=10)
@@ -14,7 +13,6 @@ def show_eda(df):
     ax.set_ylabel("Count")
     st.pyplot(fig)
 
-    # Gender Distribution
     st.subheader("Gender Distribution")
     fig, ax = plt.subplots(figsize=(5,5))
     df["Gender"].value_counts().plot(
@@ -25,19 +23,16 @@ def show_eda(df):
     ax.set_ylabel("")
     st.pyplot(fig)
 
-    # BMI Distribution
     st.subheader("BMI Distribution")
     fig, ax = plt.subplots(figsize=(8,5))
     sns.histplot(df["BMI"], kde=True, ax=ax)
     st.pyplot(fig)
 
-    # Heart Rate Distribution
     st.subheader("Heart Rate Distribution")
     fig, ax = plt.subplots(figsize=(8,5))
     sns.histplot(df["Heart_Rate"], kde=True, ax=ax)
     st.pyplot(fig)
 
-    # Correlation Heatmap
     st.subheader("Correlation Heatmap")
     fig, ax = plt.subplots(figsize=(10,7))
     sns.heatmap(

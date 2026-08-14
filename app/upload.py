@@ -2,7 +2,7 @@ import streamlit as st
 
 def show_upload(df):
 
-    st.header("📂 Upload Dataset")
+    st.header("\U0001F4C2 Upload Dataset")
 
     st.dataframe(df.head(10), width="stretch")
 

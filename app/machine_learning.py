@@ -9,11 +9,9 @@ from sklearn.metrics import (
 
 def show_machine_learning(df):
 
-    st.header("🤖 Machine Learning")
+    st.header("\U0001F916 Machine Learning")
 
     st.write("### Linear Regression Model")
-
-    # Features
     X = df[
         [
             "Age",
@@ -26,26 +24,17 @@ def show_machine_learning(df):
             "Sleep_Hours"
         ]
     ]
-
-    # Target
     y = df["Calories_Burned"]
-
-    # Train Test Split
     X_train, X_test, y_train, y_test = train_test_split(
         X,
         y,
         test_size=0.20,
         random_state=42
     )
-
-    # Train Model
     model = LinearRegression()
     model.fit(X_train, y_train)
 
-    # Prediction
     y_pred = model.predict(X_test)
-
-    # Metrics
     r2 = r2_score(y_test, y_pred)
     mae = mean_absolute_error(y_test, y_pred)
     mse = mean_squared_error(y_test, y_pred)

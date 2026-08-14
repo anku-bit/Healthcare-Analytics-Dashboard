@@ -2,7 +2,7 @@ import streamlit as st
 
 def show_cleaning(df):
 
-    st.header("🧹 Data Cleaning")
+    st.header("\U0001F9F9 Data Cleaning")
 
     col1,col2=st.columns(2)
 
